@@ -1,4 +1,4 @@
-# SIF Investment Management
+# SIF Investment Management (USC Marshall)
 
 Public Cursor/Claude plugin for **SIF Investment Management** (USC Marshall) — equity research workflow:
 
