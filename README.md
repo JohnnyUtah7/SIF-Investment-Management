@@ -1,6 +1,6 @@
-# CIF Investment Management
+# SIF Investment Management
 
-Public Cursor/Claude plugin for **CIF Investment Management** (USC Marshall) — equity research workflow:
+Public Cursor/Claude plugin for **SIF Investment Management** (USC Marshall) — equity research workflow:
 
 **SEC filings → statements → DCF / comps / LBO / SOTP → memo → Google Slides-ready deck**
 

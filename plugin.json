@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "equity-research-studio",
-  "displayName": "Equity Research Studio",
+  "name": "sif-investment-management",
+  "displayName": "SIF Investment Management",
   "version": "1.1.0",
   "description": "Portable Agent Plugin: SEC filings \u2192 DCF/comps/LBO/SOTP \u2192 equity research memo \u2192 Google Slides-ready deck. Install in Cursor via .cursor-plugin/ or copy skills/ into .cursor/skills/.",
   "author": {
