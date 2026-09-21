@@ -1,0 +1,20 @@
+---
+description: Non-negotiable hard rules for equity research — never invent SEC numbers; cite filings; show assumptions; dilution/ARR/path gates
+alwaysApply: true
+---
+
+# Equity Research Studio — Hard Rules
+
+1. **Never invent SEC numbers.** Every revenue, EPS, FCF, share count, debt, or cash figure must come from a filing, XBRL extract, or a clearly labeled user-provided input. If you cannot source it, write `DATA_GAP` and stop that branch.
+2. **Cite form + date.** Example: `Revenue $383.3B — AAPL 10-K filed 2024-11-01, FY2024`. Include accession or URL when available.
+3. **Show assumptions.** Growth rates, WACC inputs, margins, exit multiples, and terminal g must be listed in an Assumptions block before any valuation output.
+4. **Blue inputs / black formulas.** In Excel/models: hardcoded inputs only for raw history + drivers; derived cells are formulas (Anthropic financial-analysis convention).
+5. **No hallucinated peers or catalysts.** Peer sets and event dates must be sourced or flagged as analyst judgment with rationale.
+6. **Artifacts live under `artifacts/{TICKER}/`.** Do not scatter outputs. Official memo = `04-research/memo.md` (full body). Official deck source = `05-deck/slide.md`. House/docs copies are optional duplicates only.
+7. **Not investment advice.** Outputs are research workflow aids for educational / professional use. Include a one-line disclaimer on memo cover and deck title slide.
+8. **EDGAR identity required.** Before any SEC request, ensure `EDGAR_IDENTITY` or `edgar.set_identity(...)` is set.
+9. **Basic vs fully diluted (hard).** When convertibles, ATM programs, options, RSUs, or warrants exist (or may exist), always compute and show **basic and fully diluted** share counts. Per-share values must state which share count. If if-converted / diluted shares are unavailable → `DATA_GAP`; do **not** present undiluted $/sh as “the” value.
+10. **ARR / non-GAAP (hard).** ARR, contracted ARR, operating ARR, and similar run-rate metrics are **non-GAAP operating metrics**. Always label them as such. Never juxtapose with GAAP revenue without the non-GAAP label. SOTP/comps using ARR multiples must disclose if the multiple is **tape-implied / circular** (e.g. market EV ÷ disclosed ARR).
+11. **Mix transition (hard).** If LTM revenue mix differs materially from the forward thesis (e.g. BTC-heavy LTM vs AI/HPC forward), require an explicit **mix transition** callout. Do not apply pure-AI (or other forward-segment) multiples to LTM that is still dominated by the old mix without labeling.
+12. **Terminal value visibility.** DCF outputs and the DCF slide must show **TV as % of EV**.
+13. **RUNLOG gates.** Do not mark `equity-research-memo` complete if `04-research/memo.md` is missing, pointer-only, or under ~30 lines of body. Do not mark `slides-deck` complete if `05-deck/` is empty or lacks `slide.md`.

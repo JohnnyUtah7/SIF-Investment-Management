@@ -1,0 +1,18 @@
+{
+  "name": "equity-research-studio",
+  "owner": {
+    "name": "Chris Miller",
+    "email": "realchrismiller@gmail.com"
+  },
+  "metadata": {
+    "description": "SEC \u2192 DCF/comps/LBO/SOTP \u2192 equity memo \u2192 Google Slides",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "equity-research-studio",
+      "source": "./",
+      "description": "Full-company analysis orchestrator with 16 skills and 8 agents"
+    }
+  ]
+}
